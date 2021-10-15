@@ -10,6 +10,9 @@ const generateHtml = require('./utils/generateHtml');
 //adding all questions for user
 
 let employeeTeam = [];
+let empManager = [];
+let empEngineer = [];
+let empIntern = [];
 
 const employeeQuestions = () => {
     return inquirer.prompt([
@@ -102,7 +105,7 @@ async function checkingAddEmployees() {
             const engineerAnw = await engineerQuestion();
             const gitHub = engineerAnw;
             let engineer = new Engineer(name, id, email, gitHub);
-            employeeTeam.push(engineer);
+            empEngineer.push(engineer);
             await checkingAddEmployees();
           break;
 
@@ -112,7 +115,7 @@ async function checkingAddEmployees() {
             const internAnw = await internQuestion();
             const school = internAnw;
             let intern = new Intern(name, id, email, school);
-            employeeTeam.push(intern);
+            empIntern.push(intern);
             await checkingAddEmployees();
           break;
 
@@ -122,7 +125,7 @@ async function checkingAddEmployees() {
             const managerAnw = await managerQuestion();
             const offNum = managerAnw;
             let manager = new Manager(name, id, email, offNum);
-            employeeTeam.push(manager);
+            empManager.push(manager);
             await checkingAddEmployees();
           break;
       }
@@ -135,7 +138,7 @@ async function checkingAddEmployees() {
 //function to create html file
 async function createHTML(data) {
     await createMyteam();
-    fs.writeFileSync('./dist/index.html', generateHtml(data))
+    fs.writeFileSync('./dist/index.html', generateHtml(empEngineer, empManager, empIntern))
 };
 
 
