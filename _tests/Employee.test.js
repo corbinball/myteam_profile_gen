@@ -39,6 +39,6 @@ describe('Employee',()=>{
             const employee=new Employee('Corbin',69,'corbin@email.com');
 
             expect(employee.getRole()).toEqual("Employee");
-        })
-    } )
+        });
+    });
 });
