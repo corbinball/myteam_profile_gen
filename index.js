@@ -97,9 +97,10 @@ async function checkingAddEmployees() {
   async function createMyteam() {
       const userInput = await employeeQuestions();
       const { name, id, email } = userInput;
-      //use switch and break
+      
       switch (userInput.role) {
-        //case for engineer
+
+        //engineer
         case "Engineer":
             const engineerAnw = await engineerQuestion();
             const gitHub = engineerAnw;
@@ -109,7 +110,7 @@ async function checkingAddEmployees() {
           break;
 
 
-        //case for intern
+        //intern
         case "Intern":
             const internAnw = await internQuestion();
             const school = internAnw;
@@ -119,7 +120,7 @@ async function checkingAddEmployees() {
           break;
 
 
-        //case for manager
+        //manager
         case "Manager":
             const managerAnw = await managerQuestion();
             const offNum = managerAnw;
