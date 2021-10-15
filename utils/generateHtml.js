@@ -16,7 +16,7 @@ function generateHtml(data){
     
     <body>
      
-    <h1> My Team of dumbasses </h1>
+    <h1> My Team of Workers </h1>
 
     // <div container goes here for manager>
 
@@ -29,7 +29,7 @@ function generateHtml(data){
     
     </body>`
 
-    //shit goes here
+    //stuff goes here
 
 
 }
