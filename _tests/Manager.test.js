@@ -1,17 +1,32 @@
 // Importing the Manager class  
+const { expect } = require('@jest/globals');
+const Employee = require('../lib/Employee');
 const Manager = require('../lib/Manager');
 
 describe('Manager',()=>{
     describe('Initialization of Manager',()=>{
-        it.todo('should create an Manager object');
+        it('should create an Manager object',()=>{
+            const manager=new Manager('Corbin',69,'corbin@email.com',100);
+
+            expect(manager.name).toEqual('Corbin');
+            expect(manager.id).toEqual(69);
+            expect(manager.email).toEqual('corbin@email.com');
+            expect(manager.offNum).toEqual(100);
+        });
     });
-    describe('getName method test',()=>{
-        it.todo('should return the name');
+    describe('getOffnum method test',()=>{
+        it('should return the office nuber',()=>{
+            const manager=new Manager('Corbin',69,'corbin@email.com',100);
+
+            expect(manager.getOffnum()).toEqual(100);
+        });
     });
-    describe('getId method test',()=>{
-        it.todo('should return the id');
-    });
-    describe('getEmail method test',()=>{
-        it.todo('should return the email');
+    
+    describe('getRole method test',()=>{
+        it('should return the Manager string',()=>{
+            const manager=new Manager('Corbin',69,'corbin@email.com',100);
+
+            expect(manager.getRole()).toEqual("Manager");
+        });
     });
 });
