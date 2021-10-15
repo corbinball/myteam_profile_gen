@@ -5,6 +5,8 @@ const generateHtml = require('./utils/generateHtml');
 
 //adding all questions for user
 
+let employeeTeam = [];
+
 const employeeQuestions = () => {
     return inquirer.prompt([
         // questions for employees
@@ -32,44 +34,33 @@ const employeeQuestions = () => {
     ])
 };
 
-let role = '${data.role}';
-
 //manager question
 const managerQuestion = () => {
-    if (role === "Manager") {
     return inquirer.prompt({
     type: "input",
     name: "offNum",
     message: "What is your office number?",
 })
 };
-//moreEmployees();
-};
 
 
 //engineer question
 const engineerQuestion = () => {
-    if (role === "Engineer") {
     return inquirer.prompt( {
     type: "input",
     name: "gitHub",
     message: "What is your github username?",
 })
 };
-//moreEmployees();
-};
 
 
 //intern question
 const internQuestion = () => {
-    if (role === "Intern") {
     return inquirer.prompt( {
     type: "input",
     name: "school",
     message: "What school do/did you attend?"
 })
-};
-//moreEmployees();
 };
 
 
@@ -91,25 +82,66 @@ function addEmployee() {
 };
 
 
+async function checkingAddEmployees() {
+      const checktoAdd = await employeeQuestions();
+      if (checktoAdd.anotherOne) {
+        await createMyteam();
+      }
+      return employeeTeam;
+  }
+
+
+
+  //helped from BCS support
+
+  async function createMyteam() {
+      const userInput = await employeeQuestions();
+      const { name, id, email } = userInput;
+      //use switch and break
+      switch (userInput.role) {
+        //case for engineer
+        case "Engineer":
+            const engineerAnw = await engineerQuestion();
+            const gitHub = engineerAnw;
+            let engineer = new Engineer(name, id, email, gitHub);
+            employeeTeam.push(engineer);
+            await checkingAddEmployees();
+          break;
+
+
+        //case for intern
+        case "Intern":
+            const internAnw = await internQuestion();
+            const school = internAnw;
+            let intern = new Intern(name, id, email, school);
+            employeeTeam.push(intern);
+            await checkingAddEmployees();
+          break;
+
+
+        //case for manager
+        case "Manager":
+            const managerAnw = await managerQuestion();
+            const offNum = managerAnw;
+            let manager = new Manager(name, id, email, offNum);
+            employeeTeam.push(manager);
+            await checkingAddEmployees();
+          break;
+      }
+
+  }
+
+
 
 
 //function to create html file
-function writeToFile(data) {
+async function createHTML(data) {
+    await createMyteam();
     fs.writeFileSync('./dist\index.html', generateHtml(data))
 };
 
 
-//function to initialize app
-const init = () => {
-    employeeQuestions()
-    managerQuestion(),
-    engineerQuestion(),
-    internQuestion(),
-    addEmployee()
+createHTML()
+    .then(() => console.log("check dist/index.html for team"))
+    .catch(error => console.log(error));
 
-        .then((data) => writeToFile(data))
-        .catch((err) => console.error(err));
-};
-
-// Function call to initialize app
-init();
