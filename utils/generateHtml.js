@@ -18,6 +18,12 @@ function generateHtml(data){
      
     <h1> My Team of dumbasses </h1>
 
+    // <div container goes here for manager>
+
+    // <div container goes here for engineer>
+
+    // <div container goes here for interns>
+
 
     
     
