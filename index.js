@@ -5,63 +5,54 @@ const fs = require('fs');
 const generateHtml = require('./utils/generateHtml');
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return inquirer.prompt([
-
-
-        // change questions for team profiles
+const employeeQuestions = [
+        // questions for employees
     {
         type: "input",
-        name: "projectTitle",
-        message: "What is your project titled?",
+        name: "name",
+        message: "What is your name?",
     },
     {
         type: "input",
-        name: "description",
-        message: "Pretty please give a description of your project."
+        name: "id",
+        message: "What is your employee ID?"
     },
     {
         type: "input",
-        name: "installation",
-        message: "How would a user install this sweet project?",
-    },
-    {
-        type: "input",
-        name: "useageInfo",
-        message: "What is this sweet project used for?",
-    },
-    {
-        type: "input",
-        name: "contributions",
-        message: "Who all contributed to this project?",
-    },
-    {
-        type: "input",
-        name: "testInst",
-        message: "What are the instructions for a test?",
+        name: "email",
+        message: "What is your employee e-mail?",
     },
     {
         type: "list",
-        name: "licenseChoice",
-        message: "Please choose the license for this project useing the Up and Down arrow keys:",
-        choices: [
-            "Apache License 2.0",
-            "GNU General Public License v3.0",
-            "MIT License",
-            "Mozilla Public License 2.0",
-        ]
+        name: "role",
+        message: "What is the role of the Employee?",
+        choices: ["Manager", "Engineer", "Manager"]
     },
-    {
-        type: "input",
-        name: "githubName",
-        message: "What is your GitHub username for questions?",
-    },
-    {
-        type: "input",
-        name: "yourEmail",
-        message: "What is your email for project Questions?"
-    },
-])
+];
+
+const managerQuestion = {
+    type: "input",
+    name: "offNum",
+    message: "What is your office number?",
+};
+
+const engineerQuestion = {
+    type: "input",
+    name: "gitHub",
+    message: "What is your github username?",
+};
+
+const internQuestion = {
+    type: "input",
+    name: "school",
+    message: "What is school?"
+};
+
+const moreEmployees = {
+    type: "confirm",
+    name: "anotherOne",
+    message: "Do you want to add another employee?",
+    default: false,
 };
 
 // TODO: Create a function to write README file
@@ -74,7 +65,7 @@ function writeToFile(data) {
 
 // TODO: Create a function to initialize app
 const init = () => {
-    questions()
+    employeeQuestions()
         .then((data) => writeToFile(data))
         //.then(() => console.log('success'))
         .catch((err) => console.error(err));
