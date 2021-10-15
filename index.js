@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
 //added packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHtml = require('./utils/generateHtml');
 
-// TODO: Create an array of questions for user input
+//adding all questions for user
+
 const employeeQuestions = () => {
     return inquirer.prompt([
         // questions for employees
@@ -32,6 +32,7 @@ const employeeQuestions = () => {
 ])
 };
 
+//manager question
 const managerQuestion = () => {
     return inquirer.prompt({
     type: "input",
@@ -39,7 +40,7 @@ const managerQuestion = () => {
     message: "What is your office number?",
 })
 };
-
+//engineer question
 const engineerQuestion = () => {
     return inquirer.prompt( {
     type: "input",
@@ -47,7 +48,7 @@ const engineerQuestion = () => {
     message: "What is your github username?",
 })
 };
-
+//intern question
 const internQuestion = () => {
     return inquirer.prompt( {
     type: "input",
@@ -55,7 +56,7 @@ const internQuestion = () => {
     message: "What is school?"
 })
 };
-
+//add another employee question
 const moreEmployees = () => {
     return inquirer.prompt( {
     type: "confirm",
