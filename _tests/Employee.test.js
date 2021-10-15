@@ -1,6 +1,6 @@
 // Importing the Employee class  
-const { expect } = require('@jest/globals');
-const { describe } = require('yargs');
+// const { expect } = require('@jest/globals');
+// const { describe } = require('yargs');
 const Employee = require('../lib/Employee');
 
 describe('Employee',()=>{
@@ -38,7 +38,7 @@ describe('Employee',()=>{
         it('should return the Employee string',()=>{
             const employee=new Employee('Corbin',69,'corbin@email.com');
 
-            expect(employee.getRole()).toEqual('Employee');
+            expect(employee.getRole()).toEqual("Employee");
         })
     } )
 });
