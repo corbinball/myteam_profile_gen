@@ -1,6 +1,9 @@
 const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
+const inquirer = require ("inquirer");
+const fs = require("fs");
+const path = require("path");
 
 
 function generateHtml(data){
@@ -26,7 +29,22 @@ function generateHtml(data){
 
         <div class = "container">
             <div class = "row d-flex justify-content-center">
+
+
+
+
+        
+
+            
+
+
+
+
                 <!-- containers for manager, engineer, and interns-->
+
+
+
+
             </div>
         </div>
 
@@ -42,18 +60,18 @@ function generateHtml(data){
 }
 
 function generateEngineer(data) {
-
-
+ 
+    
 }
 
 function generateIntern(data) {
+   
 
 
 }
 
 function generateManager(data) {
-
-
+    
 }
 
 
