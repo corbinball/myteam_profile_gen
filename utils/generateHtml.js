@@ -6,7 +6,8 @@ const fs = require("fs");
 const path = require("path");
 
 
-function generateHtml(data){
+function generateHtml(empEngineer, empManager, empIntern){
+    console.log(empEngineer, empManager, empIntern);
     return `<!DOCTYPE html>
     <html>
     
@@ -29,16 +30,7 @@ function generateHtml(data){
 
         <div class = "container">
             <div class = "row d-flex justify-content-center">
-
-
-
-
-        
-
-            
-
-
-
+                ${generateEngineer(empEngineer)}
 
                 <!-- containers for manager, engineer, and interns-->
 
@@ -59,9 +51,29 @@ function generateHtml(data){
 
 }
 
-function generateEngineer(data) {
- 
-    
+function generateEngineer(empEngineer) {
+
+//loop
+    let engineerhtml = "";
+    for (i=0; i < empEngineer.length; i ++) {
+
+    engineerhtml += `<div class = "col-sm-4">
+    <div class = "card employee-card">
+        <div class = "card-header">
+            <h2 class = "card-title">${empEngineer[i].name}</h2>
+            <h3 class = "card-title">${empEngineer[i].role}</h3>
+        </div>
+        <div class = "card-body">
+            <ul class = "list-group">
+                <li class = "list-group-item">ID: ${empEngineer[i].id}</li>
+                <li class="list-group-item">Email: <a href="mailto:${empEngineer[i].email}">${empEngineer[i].email}</a></li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/${empEngineer[i].gitHub}" target="_blank" rel="noopener noreferrer">${empEngineer[i].gitHub}</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>`
+    };
+    return engineerhtml;
 }
 
 function generateIntern(data) {
