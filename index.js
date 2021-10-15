@@ -1,4 +1,8 @@
 //added packages
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHtml = require('./utils/generateHtml');
@@ -70,7 +74,7 @@ const moreEmployees = () => {
     type: "confirm",
     name: "anotherOne",
     message: "Do you want to add another employee?",
-    //default: false,
+    default: false,
 })
 };
 
@@ -83,7 +87,7 @@ function addEmployee() {
 
 
 async function checkingAddEmployees() {
-      const checktoAdd = await employeeQuestions();
+      const checktoAdd = await moreEmployees();
       if (checktoAdd.anotherOne) {
         await createMyteam();
       }
