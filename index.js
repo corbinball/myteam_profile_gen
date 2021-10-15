@@ -78,13 +78,6 @@ const moreEmployees = () => {
 })
 };
 
-function addEmployee() {
-    if (moreEmployees === true) {
-        employeeQuestions();
-    }
-
-};
-
 
 async function checkingAddEmployees() {
       const checktoAdd = await moreEmployees();
@@ -142,20 +135,16 @@ async function checkingAddEmployees() {
 //function to create html file
 async function createHTML(data) {
     await createMyteam();
-    fs.writeFileSync('./dist\index.html', generateHtml(data))
+    fs.writeFileSync('./dist/index.html', generateHtml(data))
 };
 
 
-// createHTML()
-//     .then(() => console.log("check dist/index.html for team"))
-//     .catch(error => console.log(error));
 
 
 //function to initialize app
 const init = () => {
     createHTML()
         .then((data) => createHTML(data))
-        //.then(() => console.log('success'))
         .catch((err) => console.error(err));
 };
 
