@@ -1,3 +1,8 @@
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
+
 function generateHtml(data){
     return `<!DOCTYPE html>
     <html>
@@ -37,3 +42,6 @@ function generateManager(data) {
 
 
 }
+
+
+module.exports = generateHtml;
