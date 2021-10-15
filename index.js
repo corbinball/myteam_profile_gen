@@ -29,8 +29,7 @@ const employeeQuestions = () => {
         message: "What is the role of the Employee?",
         choices: ["Manager", "Engineer", "Intern"]
     },
-    ]);
-
+    ])
 };
 
 let role = '${data.role}';
@@ -67,7 +66,7 @@ const internQuestion = () => {
     return inquirer.prompt( {
     type: "input",
     name: "school",
-    message: "What is school?"
+    message: "What school do/did you attend?"
 })
 };
 //moreEmployees();
@@ -96,17 +95,17 @@ function addEmployee() {
 
 //function to create html file
 function writeToFile(data) {
-    fs.writeFileSync('.\dist\index.html', generateHtml(data))
+    fs.writeFileSync('./dist\index.html', generateHtml(data))
 };
 
 
 //function to initialize app
 const init = () => {
     employeeQuestions()
-    // managerQuestion(),
-    // engineerQuestion(),
-    // internQuestion(),
-    // addEmployee()
+    managerQuestion(),
+    engineerQuestion(),
+    internQuestion(),
+    addEmployee()
 
         .then((data) => writeToFile(data))
         .catch((err) => console.error(err));
