@@ -30,27 +30,16 @@ function generateHtml(empEngineer, empManager, empIntern){
 
         <div class = "container">
             <div class = "row d-flex justify-content-center">
+                ${generateManager(empManager)}
                 ${generateEngineer(empEngineer)}
                 ${generateIntern(empIntern)}
                 
 
-                <!-- containers for manager, engineer, and interns-->
 
-
-
-
+                
             </div>
         </div>
-
-
-
-
-    
     </body>`
-
-    //stuff goes here
-
-
 }
 
 function generateEngineer(empEngineer) {
@@ -79,29 +68,46 @@ function generateEngineer(empEngineer) {
 
 function generateIntern(empIntern) {
     let internhtml = "";
-    for (i=0; i < empIntern.length; i ++) {
+    for (i=0; i < empIntern[i].length; i ++) {
         internhtml += `<div class = "col-sm-4">
         <div class = "card employee-card">
             <div class = "card-header">
-                <h2 class = "card-title">${empIntern.name}</h2>
-                <h3 class = "card-title">${empIntern.role}</h3>
+                <h2 class = "card-title">${empIntern[i].name}</h2>
+                <h3 class = "card-title">${empIntern[i].role}</h3>
             </div>
             <div class = "card-body">
                 <ul class = "list-group">
-                    <li class = "list-group-item">ID: ${empIntern.id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${empIntern.email}">${empIntern.email}</a></li>
-                    <li class="list-group-item">School: ${empIntern.school}</li>
+                    <li class = "list-group-item">ID: ${empIntern[i].id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${empIntern[i].email}">${empIntern[i].email}</a></li>
+                    <li class="list-group-item">School: ${empIntern[i].school}</li>
                 </ul>
             </div>
         </div>
         </div>`
-    }
-   
-
-
+    };
+    return internhtml;
 }
 
-function generateManager(data) {
+function generateManager(empManager) {
+    let managerhtml = "";
+    for (i=0; i < empManager.length; i ++) {
+        managerhtml += `<div class = "col-sm-4">
+        <div class = "card employee-card">
+            <div class = "card-header">
+                <h2 class = "card-title">${empManager[i].name}</h2>
+                <h3 class = "card-title">${empManager[i].role}</h3>
+            </div>
+            <div class = "card-body">
+                <ul class = "list-group">
+                    <li class = "list-group-item">ID: ${empManager[i].id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${empManager[i].email}">${empManager[i].email}</a></li>
+                    <li class="list-group-item">Office number: ${empManager[i].offNum}</li>
+                </ul>
+            </div>
+        </div>
+        </div>`
+    };
+    return managerhtml;
     
 }
 
