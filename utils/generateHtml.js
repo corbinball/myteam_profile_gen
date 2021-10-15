@@ -31,6 +31,8 @@ function generateHtml(empEngineer, empManager, empIntern){
         <div class = "container">
             <div class = "row d-flex justify-content-center">
                 ${generateEngineer(empEngineer)}
+                ${generateIntern(empIntern)}
+                
 
                 <!-- containers for manager, engineer, and interns-->
 
@@ -52,7 +54,6 @@ function generateHtml(empEngineer, empManager, empIntern){
 }
 
 function generateEngineer(empEngineer) {
-
 //loop
     let engineerhtml = "";
     for (i=0; i < empEngineer.length; i ++) {
@@ -76,7 +77,25 @@ function generateEngineer(empEngineer) {
     return engineerhtml;
 }
 
-function generateIntern(data) {
+function generateIntern(empIntern) {
+    let internhtml = "";
+    for (i=0; i < empIntern.length; i ++) {
+        internhtml += `<div class = "col-sm-4">
+        <div class = "card employee-card">
+            <div class = "card-header">
+                <h2 class = "card-title">${empIntern.name}</h2>
+                <h3 class = "card-title">${empIntern.role}</h3>
+            </div>
+            <div class = "card-body">
+                <ul class = "list-group">
+                    <li class = "list-group-item">ID: ${empIntern.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${empIntern.email}">${empIntern.email}</a></li>
+                    <li class="list-group-item">School: ${empIntern.school}</li>
+                </ul>
+            </div>
+        </div>
+        </div>`
+    }
    
 
 
