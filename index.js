@@ -142,7 +142,17 @@ async function createHTML(data) {
 };
 
 
-createHTML()
-    .then(() => console.log("check dist/index.html for team"))
-    .catch(error => console.log(error));
+// createHTML()
+//     .then(() => console.log("check dist/index.html for team"))
+//     .catch(error => console.log(error));
 
+
+//function to initialize app
+const init = () => {
+    createHTML()
+        .then((data) => createHTML(data))
+        //.then(() => console.log('success'))
+        .catch((err) => console.error(err));
+};
+
+init();
