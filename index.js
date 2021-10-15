@@ -144,7 +144,6 @@ async function createHTML(data) {
 //function to initialize app
 const init = () => {
     createHTML()
-        .then((data) => createHTML(data))
         .catch((err) => console.error(err));
 };
 
