@@ -5,7 +5,8 @@ const fs = require('fs');
 const generateHtml = require('./utils/generateHtml');
 
 // TODO: Create an array of questions for user input
-const employeeQuestions = [
+const employeeQuestions = () => {
+    return inquirer.prompt([
         // questions for employees
     {
         type: "input",
@@ -28,49 +29,54 @@ const employeeQuestions = [
         message: "What is the role of the Employee?",
         choices: ["Manager", "Engineer", "Manager"]
     },
-];
+])
+};
 
-const managerQuestion = {
+const managerQuestion = () => {
+    return inquirer.prompt({
     type: "input",
     name: "offNum",
     message: "What is your office number?",
+})
 };
 
-const engineerQuestion = {
+const engineerQuestion = () => {
+    return inquirer.prompt( {
     type: "input",
     name: "gitHub",
     message: "What is your github username?",
+})
 };
 
-const internQuestion = {
+const internQuestion = () => {
+    return inquirer.prompt( {
     type: "input",
     name: "school",
     message: "What is school?"
+})
 };
 
-const moreEmployees = {
+const moreEmployees = () => {
+    return inquirer.prompt( {
     type: "confirm",
     name: "anotherOne",
     message: "Do you want to add another employee?",
     default: false,
+})
 };
 
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data)
+//function to create html file
 function writeToFile(data) {
     fs.writeFileSync('dist\index.html', generateHtml(data))
 };
 
-//writeToFile();
 
-// TODO: Create a function to initialize app
+//function to initialize app
 const init = () => {
     employeeQuestions()
         .then((data) => writeToFile(data))
-        //.then(() => console.log('success'))
         .catch((err) => console.error(err));
 };
 
 // Function call to initialize app
 init();
-//console.log(answers);
