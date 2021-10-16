@@ -68,7 +68,7 @@ function generateEngineer(empEngineer) {
 
 function generateIntern(empIntern) {
     let internhtml = "";
-    for (i=0; i < empIntern[i].length; i ++) {
+    for (i=0; i < empIntern.length; i ++) {
         internhtml += `<div class = "col-sm-4">
         <div class = "card employee-card">
             <div class = "card-header">
