@@ -123,9 +123,9 @@ async function checkingAddEmployees() {
         //manager
         case "Manager":
             const managerAnw = await managerQuestion();
-            console.log(managerAnw);
+            //console.log(managerAnw);
             const offNum = managerAnw;
-            console.log(offNum);
+            //console.log(offNum);
             let manager = new Manager(name, id, email, offNum);
             empManager.push(manager);
             await checkingAddEmployees();
