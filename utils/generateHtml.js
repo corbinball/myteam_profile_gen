@@ -50,14 +50,14 @@ function generateEngineer(empEngineer) {
     engineerhtml += `<div class = "col-sm-4">
     <div class = "card employee-card">
         <div class = "card-header">
-            <h2 class = "card-title">${empEngineer[i].name}</h2>
-            <h3 class = "card-title">Engineer</h3>
+            <h2 class = "bg-primary text-white card-title">${empEngineer[i].name}</h2>
+            <h3 class = "bg-success text-white card-title">Engineer</h3>
         </div>
         <div class = "card-body">
             <ul class = "list-group">
-                <li class = "list-group-item">ID: ${empEngineer[i].id}</li>
-                <li class="list-group-item">Email: <a href="mailto:${empEngineer[i].email}">${empEngineer[i].email}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${empEngineer[i].gitHub.gitHub}" target="_blank" rel="noopener noreferrer">${empEngineer[i].gitHub.gitHub}</a></li>
+                <li class ="text-primary list-group-item">ID: ${empEngineer[i].id}</li>
+                <li class="text-primary list-group-item">Email: <a href="mailto:${empEngineer[i].email}">${empEngineer[i].email}</a></li>
+                <li class="text-danger list-group-item">GitHub: <a href="https://github.com/${empEngineer[i].gitHub.gitHub}" target="_blank" rel="noopener noreferrer">${empEngineer[i].gitHub.gitHub}</a></li>
             </ul>
         </div>
     </div>
@@ -72,14 +72,14 @@ function generateIntern(empIntern) {
         internhtml += `<div class = "col-sm-4">
         <div class = "card employee-card">
             <div class = "card-header">
-                <h2 class = "card-title">${empIntern[i].name}</h2>
-                <h3 class = "card-title">Intern</h3>
+                <h2 class = "bg-primary text-white card-title">${empIntern[i].name}</h2>
+                <h3 class = "bg-info text-white card-title">Intern</h3>
             </div>
             <div class = "card-body">
                 <ul class = "list-group">
-                    <li class = "list-group-item">ID: ${empIntern[i].id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${empIntern[i].email}">${empIntern[i].email}</a></li>
-                    <li class="list-group-item">School: ${empIntern[i].school.school}</li>
+                    <li class ="text-primary list-group-item">ID: ${empIntern[i].id}</li>
+                    <li class="text-primary list-group-item">Email: <a href="mailto:${empIntern[i].email}">${empIntern[i].email}</a></li>
+                    <li class="text-danger list-group-item">School: ${empIntern[i].school.school}</li>
                 </ul>
             </div>
         </div>
@@ -94,14 +94,14 @@ function generateManager(empManager) {
         managerhtml += `<div class = "col-sm-4">
         <div class = "card employee-card">
             <div class = "card-header">
-                <h2 class = "card-title">${empManager[i].name}</h2>
-                <h3 class = "card-title">Manager</h3>
+                <h2 class = "bg-primary text-white card-title">${empManager[i].name}</h2>
+                <h3 class = "bg-secondary text-white card-title">Manager</h3>
             </div>
             <div class = "card-body">
                 <ul class = "list-group">
-                    <li class = "list-group-item">ID: ${empManager[i].id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${empManager[i].email}">${empManager[i].email}</a></li>
-                    <li class="list-group-item">Office number: ${empManager[i].offNum.offNum}</li>
+                    <li class ="text-primary list-group-item">ID: ${empManager[i].id}</li>
+                    <li class="text-primary list-group-item">Email: <a href="mailto:${empManager[i].email}">${empManager[i].email}</a></li>
+                    <li class="text-danger list-group-item">Office number: ${empManager[i].offNum.offNum}</li>
                 </ul>
             </div>
         </div>

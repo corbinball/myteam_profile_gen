@@ -7,9 +7,10 @@ h1 {
     color: royalblue;
     text-align: center;
 }
-.card.employee-card {
+
+.empcard {
     border-radius: 25px;
-    border: 2px solid gold;
+    border: 15px solid rgb(14, 155, 9);
     padding: 20px;
     width: 200px;
     height: 150px;
