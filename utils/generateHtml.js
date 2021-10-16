@@ -57,7 +57,7 @@ function generateEngineer(empEngineer) {
             <ul class = "list-group">
                 <li class = "list-group-item">ID: ${empEngineer[i].id}</li>
                 <li class="list-group-item">Email: <a href="mailto:${empEngineer[i].email}">${empEngineer[i].email}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${empEngineer[i].gitHub}" target="_blank" rel="noopener noreferrer">${empEngineer[i].gitHub}</a></li>
+                <li class="list-group-item">GitHub: <a href="https://github.com/${empEngineer[i].gitHub.gitHub}" target="_blank" rel="noopener noreferrer">${empEngineer[i].gitHub.gitHub}</a></li>
             </ul>
         </div>
     </div>
@@ -79,7 +79,7 @@ function generateIntern(empIntern) {
                 <ul class = "list-group">
                     <li class = "list-group-item">ID: ${empIntern[i].id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${empIntern[i].email}">${empIntern[i].email}</a></li>
-                    <li class="list-group-item">School: ${empIntern[i].school}</li>
+                    <li class="list-group-item">School: ${empIntern[i].school.school}</li>
                 </ul>
             </div>
         </div>
@@ -101,7 +101,7 @@ function generateManager(empManager) {
                 <ul class = "list-group">
                     <li class = "list-group-item">ID: ${empManager[i].id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${empManager[i].email}">${empManager[i].email}</a></li>
-                    <li class="list-group-item">Office number: ${empManager[i].offNum}</li>
+                    <li class="list-group-item">Office number: ${empManager[i].offNum.offNum}</li>
                 </ul>
             </div>
         </div>
