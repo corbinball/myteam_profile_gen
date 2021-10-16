@@ -51,7 +51,7 @@ function generateEngineer(empEngineer) {
     <div class = "card employee-card">
         <div class = "card-header">
             <h2 class = "card-title">${empEngineer[i].name}</h2>
-            <h3 class = "card-title">${empEngineer[i].role}</h3>
+            <h3 class = "card-title">Engineer</h3>
         </div>
         <div class = "card-body">
             <ul class = "list-group">
@@ -73,7 +73,7 @@ function generateIntern(empIntern) {
         <div class = "card employee-card">
             <div class = "card-header">
                 <h2 class = "card-title">${empIntern[i].name}</h2>
-                <h3 class = "card-title">${empIntern[i].role}</h3>
+                <h3 class = "card-title">Intern</h3>
             </div>
             <div class = "card-body">
                 <ul class = "list-group">
@@ -95,7 +95,7 @@ function generateManager(empManager) {
         <div class = "card employee-card">
             <div class = "card-header">
                 <h2 class = "card-title">${empManager[i].name}</h2>
-                <h3 class = "card-title">${empManager[i].role}</h3>
+                <h3 class = "card-title">Manager</h3>
             </div>
             <div class = "card-body">
                 <ul class = "list-group">
