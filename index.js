@@ -20,7 +20,7 @@ const employeeQuestions = () => {
     {
         type: "input",
         name: "name",
-        message: "What is your name?",
+        message: "What is the employee's name?",
     },
     {
         type: "input",
