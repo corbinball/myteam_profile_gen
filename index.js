@@ -103,7 +103,7 @@ async function checkingAddEmployees() {
         //engineer
         case "Engineer":
             const engineerAnw = await engineerQuestion();
-            const gitHub = engineerAnw;
+            const {gitHub} = engineerAnw;
             let engineer = new Engineer(name, id, email, gitHub);
             empEngineer.push(engineer);
             await checkingAddEmployees();
@@ -113,7 +113,7 @@ async function checkingAddEmployees() {
         //intern
         case "Intern":
             const internAnw = await internQuestion();
-            const school = internAnw;
+            const {school} = internAnw;
             let intern = new Intern(name, id, email, school);
             empIntern.push(intern);
             await checkingAddEmployees();
@@ -124,7 +124,7 @@ async function checkingAddEmployees() {
         case "Manager":
             const managerAnw = await managerQuestion();
             //console.log(managerAnw);
-            const offNum = managerAnw;
+            const {offNum} = managerAnw;
             //console.log(offNum);
             let manager = new Manager(name, id, email, offNum);
             empManager.push(manager);
