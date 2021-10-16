@@ -27,7 +27,7 @@ github profile. And for interns it will show what school they attend/attended.
     
     :Link to Video of generator in action:
 
-//insert video
+https://watch.screencastify.com/v/2QsZ5RjVmnBUQxqSjceU
 
 
 ## Features
